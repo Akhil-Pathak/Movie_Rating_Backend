@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "d7972c13-7b76-417d-9176-de9583cfdd33",
+		"name": "ZeroBalance_Internship_Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "registerUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"akhilpathak\",\n    \"email\": \"akhilpathak23@GMAIL.com\",\n    \"password\":\"random123\",\n    \"age\":\"18\",\n    \"name\":\"akhil\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/user/user_controller/create_user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"user_controller",
+						"create_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addMovieAndRating",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"movies\" : [\"hi\" , \"Bye\" , \"Tata\"],\n    \"ratings\" : [2 , 5 ,3]\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/user/user_controller/add_movie_and_ratings",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"user_controller",
+						"add_movie_and_ratings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateRating",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"movie_id\" : \"6277b3f441c9ffbc4834bb31\",\n    \"updated_rating\" : 5\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/rating/rating_controller/update_rating",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"rating",
+						"rating_controller",
+						"update_rating"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"akhilpathak23@GMAIL.com\",\n    \"password\":\"random123\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/user/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movieSearch",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"akhilpathak23@GMAIL.com\",\n    \"password\":\"random123\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/movie/movie_controller/search?search=ta tata",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"movie",
+						"movie_controller",
+						"search"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "ta tata"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"akhilpatk23@GMAIL.com\",\n    \"password\":\"random123\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/test",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
