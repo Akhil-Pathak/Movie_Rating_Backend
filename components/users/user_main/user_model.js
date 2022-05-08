@@ -5,16 +5,16 @@ const UserMainSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "UserAuthenticationDetails",
   },
-  ratings: [
+  // ratings: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     // ref: "UserAuthenticationDetails",
+  //   },
+  // ],
+  added_movies: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      // ref: "UserAuthenticationDetails",
-    },
-  ],
-  favourite_movies: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      // ref: "UserAuthenticationDetails",
+      ref: "MovieMain",
     },
   ],
   name: {

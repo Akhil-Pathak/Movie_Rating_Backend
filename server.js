@@ -14,7 +14,7 @@ app.use(
     secret: process.env.SESSION_PASS,
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 3600000 },
+    // cookie: { maxAge: 3600000 },
   })
 );
 
@@ -26,13 +26,17 @@ require("./startup/db");
 
 const user_router = require("./components/users/user_main/user_router");
 const user_authentication_router = require("./components/users/user_authentication/user_authentication_router");
+const movie_router = require("./components/movies/movie_router");
+const rating_router = require("./components/ratings/rating_router");
 
 app.get("/test", function (req, res) {
-  res.send(`test working ${req.session.username}`);
+  res.send(`test working ${req.session.username} and ${req.session.user_id}`);
 });
 
 app.use("/api", user_router);
 app.use("/api", user_authentication_router);
+app.use("/api", movie_router);
+app.use("/api", rating_router);
 
 app.listen(PORT, () => {
   console.info(chalk.blue.bold(`App listening at http://localhost:${PORT}`));

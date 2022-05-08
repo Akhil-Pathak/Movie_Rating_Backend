@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const { validationResult } = require("express-validator");
 
 const { UserAuthenticationDetails } = require("./user_authentication_model");
+const { UserMain } = require("../user_main/user_model");
 
 const loginUser = (req, res) => {
   const errors = validationResult(req);
@@ -50,13 +51,19 @@ const loginUser = (req, res) => {
 
         throw new Error("Wrong Password or Username");
       } else {
-        req.session.username = user.username;
+        UserMain.findOne({ authentication_detials: user._id })
+          .exec()
+          .then((user_id) => {
+            console.log(user_id._id);
+            req.session.user_id = user_id._id;
+            req.session.username = user.username;
 
-        user.incorrect_attempts = 0;
-        user.lockout_state = false;
-        user.save();
+            user.incorrect_attempts = 0;
+            user.lockout_state = false;
+            user.save();
 
-        return res.status(200).send({ status: "SUCCESS", msg: "Logged in Successfully" });
+            return res.status(200).send({ status: "SUCCESS", msg: "Logged in Successfully" });
+          });
       }
     })
     .catch((err) => {
