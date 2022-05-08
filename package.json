@@ -1,0 +1,28 @@
+{
+  "name": "movie_rating_backend",
+  "version": "1.0.0",
+  "description": "Backend API for Movie Rating System for Zerobalance Internship Task",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rating",
+    "movies",
+    "API"
+  ],
+  "author": "Akhil Pathak",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "chalk": "^4.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "mongoose": "^6.3.2",
+    "uuid": "^8.3.2"
+  }
+}
